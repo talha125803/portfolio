@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Muhammad Talha | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: #020617;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #e5e7eb;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            color: #38bdf8;
+        }
+
+        .card {
+            background: #020617;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-box {
+            background: #020617;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .skill-box h3 {
+            margin-bottom: 15px;
+            color: #22d3ee;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: #020617;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        /* Fade Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-image {
+            position: relative;
+            max-width: 320px;
+            margin: 30px auto 0;
+        }
+
+        .hero-image img {
+            width: 100%;
+            display: block;
+
+            /* Bottom fade effect */
+            -webkit-mask-image: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 1) 65%,
+                    rgba(0, 0, 0, 0) 100%);
+
+            mask-image: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 1) 65%,
+                    rgba(0, 0, 0, 0) 100%);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            padding: 80px 20px 40px;
+            text-align: center;
+        }
+        /* ===== ROCKET BACKGROUND ===== */
+.rocket-bg {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Rocket */
+.rocket {
+    position: absolute;
+    bottom: -100px;
+    width: 40px;
+    height: 80px;
+    background: linear-gradient(#e5e7eb, #9ca3af);
+    border-radius: 20px 20px 8px 8px;
+    animation: flyRocket linear infinite;
+}
+
+/* Rocket Nose */
+.rocket::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: #ef4444;
+    border-radius: 50% 50% 0 0;
+}
+
+/* Rocket Fire */
+.rocket::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 20px;
+    background: radial-gradient(circle, #facc15, #ef4444);
+    border-radius: 50%;
+    animation: flame 0.2s infinite alternate;
+}
+
+@keyframes flame {
+    from { height: 18px; }
+    to { height: 24px; }
+}
+
+@keyframes flyRocket {
+    from {
+        transform: translateY(0) translateX(0) rotate(-10deg);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    to {
+        transform: translateY(-120vh) translateX(150px) rotate(10deg);
+        opacity: 0;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+          <div class="rocket-bg"></div>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>Muhammad Talha</h1>
+        <div class="hero-image">
+            <img src="Transparent (1).png" alt="Muhammad Talha">
+        </div>
+
+        <p>BS Software Engineering Student | Web & Game Developer</p>
+    </header>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="fade-in">
+        <h2>About Me</h2>
+        <div class="card">
+            <p>
+                I am a BS Software Engineering student passionate about coding and game development.
+                I enjoy building websites, programming applications, and creating immersive experiences
+                using modern technologies.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" class="fade-in">
+        <h2>Education</h2>
+
+        <div class="card">
+            <h3>BS Software Engineering</h3>
+            <p>— Continuing</p>
+        </div>
+
+        <div class="card">
+            <h3>FSc (Pre-Engineering)</h3>
+            <p>Marks: 772 / 1100</p>
+        </div>
+
+        <div class="card">
+            <h3>Matric</h3>
+            <p>Marks: 1092 / 1100</p>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="fade-in">
+        <h2>Skills</h2>
+
+        <div class="skills-grid">
+            <div class="skill-box">
+                <h3>Web Development</h3>
+                <p>HTML, CSS, JavaScript</p>
+            </div>
+
+            <div class="skill-box">
+                <h3>Programming</h3>
+                <p>C++, C#</p>
+            </div>
+
+            <div class="skill-box">
+                <h3>Game Development</h3>
+                <p>Unreal Engine</p>
+            </div>
+
+            <div class="skill-box">
+                <h3>Digital Marketing</h3>
+                <p>Facebook & TikTok Ads</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="fade-in">
+        <h2>Contact</h2>
+        <div class="card contact-info">
+            <p><strong>Name:</strong> Muhammad Talha Riaz</p>
+            <p><strong>Phone:</strong> +92 327 6150501</p>
+            <p><strong>Email:</strong> talhariazdotin@gmail.com</p>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        © 2026 Muhammad Talha | Portfolio Website
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        const sections = document.querySelectorAll(".fade-in");
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+     <script>
+    const rocketBg = document.querySelector(".rocket-bg");
+
+    function createRocket() {
+        const rocket = document.createElement("div");
+        rocket.classList.add("rocket");
+
+        rocket.style.left = Math.random() * window.innerWidth + "px";
+        rocket.style.animationDuration = 6 + Math.random() * 6 + "s";
+
+        rocketBg.appendChild(rocket);
+
+        setTimeout(() => {
+            rocket.remove();
+        }, 12000);
+    }
+
+    setInterval(createRocket, 1200);
+</script>
+
+</body>
+
+
+
+
+</html>
