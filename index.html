@@ -214,6 +214,10 @@
 </head>
 
 <body>
+    <audio id="bg-music" autoplay loop muted>
+    <source src="background.mp3" type="audio/mpeg">
+</audio>
+
           <div class="rocket-bg"></div>
     <!-- ===== HEADER ===== -->
     <header>
@@ -348,12 +352,26 @@
     setInterval(createRocket, 1200);
 </script>
 
+<script>
+    const music = document.getElementById("bg-music");
+
+    window.addEventListener("click", () => {
+        if (music.muted) {
+            music.muted = false;
+            music.volume = 0.4;
+            music.play();
+        }
+    }, { once: true });
+</script>
+
+    
 </body>
 
 
 
 
 </html>
+
 
 
 
